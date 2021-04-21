@@ -9,13 +9,13 @@ const app = Vue.createApp({
             mouseX: 0,
             mouseY: 0,
             data: [
-                { name: 'John Smith', age: 30, gender: 'male' },
-                { name: 'John Doe', age: 40, gender: 'male' },
-                { name: 'Jane Smith', age: 40, gender: 'female' },
-                { name: 'Jane Doe', age: 30, gender: 'female' },
-                { name: 'Jon Smith', age: 50, gender: 'male' },
-                { name: 'Joan Smith', age: 40, gender: 'female' },
-                { name: 'Job Smith', age: 30, gender: 'male' },
+                { name: 'John Smith', age: 30, gender: 'male', image: 'https://randomuser.me/api/portraits/men/1.jpg' },
+                { name: 'John Doe', age: 40, gender: 'male', image: 'https://randomuser.me/api/portraits/men/2.jpg' },
+                { name: 'Jane Smith', age: 40, gender: 'female', image: 'https://randomuser.me/api/portraits/women/3.jpg' },
+                { name: 'Jane Doe', age: 30, gender: 'female', image: 'https://randomuser.me/api/portraits/women/4.jpg' },
+                { name: 'Jon Smith', age: 50, gender: 'male', image: 'https://randomuser.me/api/portraits/men/5.jpg' },
+                { name: 'Joan Smith', age: 40, gender: 'female', image: 'https://randomuser.me/api/portraits/women/6.jpg' },
+                { name: 'Job Smith', age: 30, gender: 'male', image: 'https://randomuser.me/api/portraits/men/7.jpg' },
             ]
         }
     },
