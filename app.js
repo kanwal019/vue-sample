@@ -11,11 +11,11 @@ const app = Vue.createApp({
             data: [
                 { name: 'John Smith', age: 30, gender: 'male', image: 'https://randomuser.me/api/portraits/men/1.jpg', isFamous: true },
                 { name: 'John Doe', age: 40, gender: 'male', image: 'https://randomuser.me/api/portraits/men/2.jpg', isFamous: false },
-                { name: 'Jane Smith', age: 40, gender: 'female', image: 'https://randomuser.me/api/portraits/women/3.jpg', isFamous: false  },
-                { name: 'Jane Doe', age: 30, gender: 'female', image: 'https://randomuser.me/api/portraits/women/4.jpg', isFamous: false  },
-                { name: 'Jon Smith', age: 50, gender: 'male', image: 'https://randomuser.me/api/portraits/men/5.jpg', isFamous: true  },
-                { name: 'Joan Smith', age: 40, gender: 'female', image: 'https://randomuser.me/api/portraits/women/6.jpg', isFamous: false  },
-                { name: 'Job Smith', age: 30, gender: 'male', image: 'https://randomuser.me/api/portraits/men/7.jpg', isFamous: true  },
+                { name: 'Jane Smith', age: 40, gender: 'female', image: 'https://randomuser.me/api/portraits/women/3.jpg', isFamous: false },
+                { name: 'Jane Doe', age: 30, gender: 'female', image: 'https://randomuser.me/api/portraits/women/4.jpg', isFamous: false },
+                { name: 'Jon Smith', age: 50, gender: 'male', image: 'https://randomuser.me/api/portraits/men/5.jpg', isFamous: true },
+                { name: 'Joan Smith', age: 40, gender: 'female', image: 'https://randomuser.me/api/portraits/women/6.jpg', isFamous: false },
+                { name: 'Job Smith', age: 30, gender: 'male', image: 'https://randomuser.me/api/portraits/men/7.jpg', isFamous: true },
             ]
         }
     },
@@ -31,7 +31,15 @@ const app = Vue.createApp({
             console.log(event.type);
             this.mouseX = event.offsetX;
             this.mouseY = event.offsetY;
-        }
+        },
+        toggleFamous(name) {
+            this.data.find((o, i) => {
+                if (o.name === name) {
+                    this.data[i] = { name: o.name, age: o.age, gender: o.gender, image: o.image, isFamous: !o.isFamous };
+                    return;
+                }
+            });
+        },
     }
 })
 

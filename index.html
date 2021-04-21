@@ -65,7 +65,7 @@
                 <div class="box" @mousemove="handleEvent">Mouse Move({{mouseX}},{{mouseY}})</div>
             </div>
             <ul>
-                <li v-for="person in data">
+                <li v-for="person in data" @click="toggleFamous(person.name)">
                     <img :src="person.image" :alt="person.name" :class="{ famous: person.isFamous }" />
                     <p>{{person.name}}(<i>{{person.age}},{{person.gender}}</i>)</p>
                 </li>
