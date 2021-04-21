@@ -35,6 +35,11 @@ const app = Vue.createApp({
         toggleFamous(person) {
             person.isFamous = !person.isFamous;
         },
+    },
+    computed: {
+        famousPersons() {
+            return this.data.filter((person) => person.isFamous);
+        }
     }
 })
 

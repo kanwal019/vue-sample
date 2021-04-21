@@ -70,6 +70,15 @@
                     <p>{{person.name}}(<i>{{person.age}},{{person.gender}}</i>)</p>
                 </li>
             </ul>
+            <br />
+            <br />
+            <h3>Famous Persons -</h3>
+            <ul>
+                <li v-for="person in famousPersons" @click="toggleFamous(person)">
+                    <img :src="person.image" :alt="person.name" :class="{ famous: person.isFamous }" />
+                    <p>{{person.name}}(<i>{{person.age}},{{person.gender}}</i>)</p>
+                </li>
+            </ul>
         </div>
         <script src="app.js"></script>
     </body>
