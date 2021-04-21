@@ -21,7 +21,10 @@
             <div @click="changeTitle('Template for the component !!')">Original Title !!</div>
         </div>
         <br /><br />
-        <button v-on:click="toggleDisplay">Toggle Display</button>
+        <button v-on:click="toggleDisplay">
+            <span v-if="!isDisplayed">Show Display</span>
+            <span v-if="isDisplayed">Hide Display</span>
+        </button>
     </div>
     <script src="app.js"></script>
 </body>
