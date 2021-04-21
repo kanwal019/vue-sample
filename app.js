@@ -32,13 +32,8 @@ const app = Vue.createApp({
             this.mouseX = event.offsetX;
             this.mouseY = event.offsetY;
         },
-        toggleFamous(name) {
-            this.data.find((o, i) => {
-                if (o.name === name) {
-                    this.data[i] = { name: o.name, age: o.age, gender: o.gender, image: o.image, isFamous: !o.isFamous };
-                    return;
-                }
-            });
+        toggleFamous(person) {
+            person.isFamous = !person.isFamous;
         },
     }
 })
