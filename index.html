@@ -1,12 +1,85 @@
 <hmtl lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue - Sample</title>
-    <script src="https://unpkg.com/vue@3.0.2"></script>
-</head>
-<body>
-    <h1>Hello World !!</h1>
-    <script src="app.js"></script>
-</body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue - Sample</title>
+        <script src="https://unpkg.com/vue@3.0.2"></script>
+        <style>
+            li {
+                list-style-type: none;
+                background-color: #fff;
+                width: 150px;
+                margin: 20px auto;
+                padding: 10px 20px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                display: inline-block;
+            }
+
+            .box {
+                padding: 100px 0;
+                width: 400px;
+                text-align: center;
+                background: #ddd;
+                margin: 20px;
+                display: inline-block;
+            }
+
+            .famous {
+                border: 4px solid rgb(110, 20, 20);
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Hello World !!</h1>
+        <div id="app">
+            <h4><a v-bind:href="googleURL">Google</a></h4>
+            <div v-if="isDisplayed">
+                <h2>{{ title }}</h2>
+                <h4><a :href="googleURL">Google</a></h4>
+                <h5>{{ username }} - <i>{{ userid }}</i></h5>
+                <hr />
+                <br />
+                <button v-on:click="username='John Doe'">Username = John Doe</button>
+                &nbsp;
+                <button v-on:click="username='John Smith'">Username = John Smith</button>
+                <br /><br />
+                <div @click="changeTitle">Change Title !!</div>
+                <div @click="changeTitle('Template for the component !!')">Original Title !!</div>
+            </div>
+            <h3 v-show="!isDisplayed">Currently Hiding Display...</h3>
+            <br /><br />
+            <button @click="toggleDisplay">
+                <span v-if="isDisplayed">Hide Display</span>
+                <span v-else>Show Display</span>
+            </button>
+            <br /><br />
+            <div v-if="isDisplayed">
+                <div class="box" @mouseover="handleEvent">Mouse Over</div>
+                <div class="box" @mouseleave="handleEvent">Mouse Leave</div>
+                <div class="box" @dblclick="handleEvent">Double Click</div>
+                <div class="box" @mousemove="handleEvent">Mouse Move({{mouseX}},{{mouseY}})</div>
+            </div>
+            <ul>
+                <li v-for="person in data" @click="toggleFamous(person)">
+                    <img :src="person.image" :alt="person.name" :class="{ famous: person.isFamous }" />
+                    <p>{{person.name}}(<i>{{person.age}},{{person.gender}}</i>)</p>
+                </li>
+            </ul>
+            <br />
+            <br />
+            <h3>Famous Persons -</h3>
+            <ul>
+                <li v-for="person in famousPersons" @click="toggleFamous(person)">
+                    <img :src="person.image" :alt="person.name" :class="{ famous: person.isFamous }" />
+                    <p>{{person.name}}(<i>{{person.age}},{{person.gender}}</i>)</p>
+                </li>
+            </ul>
+        </div>
+        <script src="app.js"></script>
+    </body>
 </hmtl>
