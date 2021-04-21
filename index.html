@@ -20,8 +20,10 @@
     <body>
         <h1>Hello World !!</h1>
         <div id="app">
+            <h4><a v-bind:href="googleURL">Google</a></h4>
             <div v-if="isDisplayed">
                 <h2>{{ title }}</h2>
+                <h4><a :href="googleURL">Google</a></h4>
                 <h5>{{ username }} - <i>{{ userid }}</i></h5>
                 <hr />
                 <br />
