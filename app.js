@@ -4,9 +4,18 @@ const app = Vue.createApp({
             title: 'Template for the component !!',
             username: 'John Smith',
             userid: 911,
-            isDisplayed: true,
+            isDisplayed: false,
             mouseX: 0,
             mouseY: 0,
+            data: [
+                {name:'John Smith', age:30, gender:'male'},
+                {name:'John Doe', age:40, gender:'male'},
+                {name:'Jane Smith', age:40, gender:'female'},
+                {name:'Jane Doe', age:30, gender:'female'},
+                {name:'Jon Smith', age:50, gender:'male'},
+                {name:'Joan Smith', age:40, gender:'female'},
+                {name:'Job Smith', age:30, gender:'male'},
+            ]
         }
     },
     methods: {

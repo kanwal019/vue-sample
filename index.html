@@ -39,10 +39,15 @@
                 <span v-else>Show Display</span>
             </button>
             <br /><br />
-            <div class="box" @mouseover="handleEvent">Mouse Over</div>
-            <div class="box" @mouseleave="handleEvent">Mouse Leave</div>
-            <div class="box" @dblclick="handleEvent">Double Click</div>
-            <div class="box" @mousemove="handleEvent">Mouse Move({{mouseX}},{{mouseY}})</div>
+            <div v-if="isDisplayed">
+                <div class="box" @mouseover="handleEvent">Mouse Over</div>
+                <div class="box" @mouseleave="handleEvent">Mouse Leave</div>
+                <div class="box" @dblclick="handleEvent">Double Click</div>
+                <div class="box" @mousemove="handleEvent">Mouse Move({{mouseX}},{{mouseY}})</div>
+            </div>
+            <ol>
+                <li v-for="person in data">{{person.name}}(<i>{{person.age}},{{person.gender}}</i>)</li>
+            </ol>
         </div>
         <script src="app.js"></script>
     </body>
