@@ -1,31 +1,34 @@
 <hmtl lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue - Sample</title>
-    <script src="https://unpkg.com/vue@3.0.2"></script>
-</head>
-<body>
-    <h1>Hello World !!</h1>
-    <div id="app">
-        <div v-if="isDisplayed">
-            <h2>{{ title }}</h2>
-            <h5>{{ username }} - <i>{{ userid }}</i></h5>
-            <hr />
-            <br />
-            <button v-on:click="username='John Doe'">Username = John Doe</button>
-            &nbsp;
-            <button v-on:click="username='John Smith'">Username = John Smith</button>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue - Sample</title>
+        <script src="https://unpkg.com/vue@3.0.2"></script>
+    </head>
+
+    <body>
+        <h1>Hello World !!</h1>
+        <div id="app">
+            <div v-if="isDisplayed">
+                <h2>{{ title }}</h2>
+                <h5>{{ username }} - <i>{{ userid }}</i></h5>
+                <hr />
+                <br />
+                <button v-on:click="username='John Doe'">Username = John Doe</button>
+                &nbsp;
+                <button v-on:click="username='John Smith'">Username = John Smith</button>
+                <br /><br />
+                <div @click="changeTitle">Change Title !!</div>
+                <div @click="changeTitle('Template for the component !!')">Original Title !!</div>
+            </div>
+            <h3 v-show="!isDisplayed">Currently Hiding Display...</h3>
             <br /><br />
-            <div @click="changeTitle">Change Title !!</div>
-            <div @click="changeTitle('Template for the component !!')">Original Title !!</div>
+            <button @click="toggleDisplay">
+                <span v-if="isDisplayed">Hide Display</span>
+                <span v-else>Show Display</span>
+            </button>
         </div>
-        <br /><br />
-        <button v-on:click="toggleDisplay">
-            <span v-if="!isDisplayed">Show Display</span>
-            <span v-if="isDisplayed">Hide Display</span>
-        </button>
-    </div>
-    <script src="app.js"></script>
-</body>
+        <script src="app.js"></script>
+    </body>
 </hmtl>
