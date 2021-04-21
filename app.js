@@ -5,6 +5,11 @@ const app = Vue.createApp({
             username: 'John Smith',
             userid: 911
         }
+    },
+    methods: {
+        changeTitle(title) {            
+            typeof(title) !== 'string' ? this.title = 'Changed Title !!' : this.title = title
+        }
     }
 })
 

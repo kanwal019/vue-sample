@@ -12,8 +12,8 @@
         <h5>{{ username }} - <i>{{ userid }}</i></h5>
         <button v-on:click="username='John Doe'">Username = John Doe</button>
         <button v-on:click="username='John Smith'">Username = John Smith</button>
-        <div @click="title='Changed Title'">Change Title !!</div>
-        <div @click="title='Template for the component !!'">Original Title !!</div>
+        <div @click="changeTitle">Change Title !!</div>
+        <div @click="changeTitle('Template for the component !!')">Original Title !!</div>
     </div>
     <script src="app.js"></script>
 </body>
