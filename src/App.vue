@@ -1,5 +1,9 @@
 <template>
   <h1>{{ title }}</h1>
+  <p>
+    <input type="text" ref="name" />
+    <button @click="handleClick">Click Me !!</button>
+  </p>
 </template>
 
 <script>
@@ -9,6 +13,11 @@ export default {
     return {
       title: "Vue - Sample Application",
     };
+  },
+  methods: {
+    handleClick() {
+      console.log(this.$refs.name);
+    },
   },
 };
 </script>
