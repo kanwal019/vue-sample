@@ -1,12 +1,15 @@
 <template>
-  <h1>Vue - Sample Application</h1>
+  <h1>{{title}}</h1>
 </template>
 
 <script>
 
 export default {
-  name: 'Vue - Sample Application',
-  components: {
+  name: 'App',
+  data() {
+    return {
+      title: 'Vue - Sample Application',
+    }
   }
 }
 </script>
