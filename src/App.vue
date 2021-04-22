@@ -17,6 +17,7 @@ export default {
   methods: {
     handleClick() {
       console.log(this.$refs.name);
+      this.$refs.name.classList.add("clicked");
     },
   },
 };
@@ -35,5 +36,9 @@ h1 {
   border-bottom: 1px solid #ddd;
   display: inline-block;
   padding-bottom: 10px;
+}
+input.clicked {
+  background-color: coral;
+  color: white;
 }
 </style>
