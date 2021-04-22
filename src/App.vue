@@ -23,7 +23,7 @@ export default {
   margin-top: 60px;
 }
 h1 {
-  border-bottom: ipx solid #ddd;
+  border-bottom: 1px solid #ddd;
   display: inline-block;
   padding-bottom: 10px;
 }
