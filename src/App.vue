@@ -1,17 +1,16 @@
 <template>
-  <h1>{{title}}</h1>
+  <h1>{{ title }}</h1>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
+  name: "App",
   data() {
     return {
-      title: 'Vue - Sample Application',
-    }
-  }
-}
+      title: "Vue - Sample Application",
+    };
+  },
+};
 </script>
 
 <style>
@@ -22,5 +21,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+h1 {
+  border-bottom: ipx solid #ddd;
+  display: inline-block;
+  padding-bottom: 10px;
 }
 </style>
