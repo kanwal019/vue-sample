@@ -18,6 +18,7 @@ export default {
     handleClick() {
       console.log(this.$refs.name);
       this.$refs.name.classList.add("clicked");
+      this.$refs.name.focus();
     },
   },
 };
