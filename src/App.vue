@@ -5,7 +5,7 @@
     <button @click="handleClick">Click Me !!</button>
   </p>
   <br />
-  <Modal />
+  <Modal :header="header" :subHeader="subHeader" theme="dark" />
 </template>
 
 <script>
@@ -17,6 +17,8 @@ export default {
   data() {
     return {
       title: "Vue - Sample Application",
+      header: "This is Modal header !!",
+      subHeader: "This is Modal sub-header...",
     };
   },
   methods: {

@@ -1,11 +1,18 @@
 <template>
   <div class="backdrop">
-    <div class="modal">
-      <h1>Modal Title</h1>
-      <p>Modal Content</p>
+    <div class="modal" :class="{ dark: theme === 'dark' }">
+      <h1>{{ header }}</h1>
+      <p>{{ subHeader }}</p>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: ["header", "subHeader", "theme"],
+};
+</script>
+
 
 <style scoped>
 .modal {
@@ -14,6 +21,12 @@
   margin: 100px auto;
   background: white;
   border-radius: 10px;
+}
+.modal.dark {
+  background: #444;
+}
+.modal.dark p {
+  color: #fff;
 }
 .backdrop {
   top: 0;
