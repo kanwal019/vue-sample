@@ -5,7 +5,10 @@
     <button @click="handleClick">Click Me !!</button>
   </p>
   <br />
-  <Modal :header="header" :subHeader="subHeader" theme="dark" />
+  <div v-if="showModal">
+    <Modal :header="header" :subHeader="subHeader" theme="dark" @close="toggleModal" />
+  </div>
+  <button @click="toggleModal">Show Modal</button>
 </template>
 
 <script>
@@ -19,6 +22,7 @@ export default {
       title: "Vue - Sample Application",
       header: "This is Modal header !!",
       subHeader: "This is Modal sub-header...",
+      showModal: false,
     };
   },
   methods: {
@@ -26,6 +30,9 @@ export default {
       console.log(this.$refs.name);
       this.$refs.name.classList.add("clicked");
       this.$refs.name.focus();
+    },
+    toggleModal() {
+      this.showModal = !this.showModal;
     },
   },
 };
